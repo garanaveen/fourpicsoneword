@@ -7,7 +7,7 @@ def DeleteALetterFromString(character, s):
 
     l = list(s)  # convert to list
     
-    p = l.index(character)  # find position of the letter "a"
+    p = l.index(character) 
     del(l[p])         # delete it
     
     s = "".join(l)  # convert back to string
@@ -62,15 +62,3 @@ allowedlettersInCAPS = allowedlettersInCAPS.upper()
 print "allowedlettersInCAPS:", allowedlettersInCAPS
 
 PrintLinesInFile()
-
-
-
-#def ParseEnglishDictionaryFile(letters, sizeofword)
-#Code to parse
-#return all possible words which meet the condition of letters and sizeofword.
-
-
-#def IsValid()
-#Given a word, this function decides if this word meets the condition of letters and sizeofword.
-
-
