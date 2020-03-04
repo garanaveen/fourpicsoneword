@@ -2,6 +2,9 @@
 
 import argparse
 
+#Dictionary file in MacOs,
+DICTIONARY_FILE='/usr/share/dict/words'
+
 
 def DeleteALetterFromString(character, s):
 
@@ -37,7 +40,8 @@ def DoesWordMeetsCondition(word):
         return False
 
 def PrintLinesInFile():
-    f = open('british-english')
+  try:
+    f = open(DICTIONARY_FILE)
     try:
         for line in f:
             words = line.split()
@@ -46,6 +50,8 @@ def PrintLinesInFile():
                     print words[0]
     finally:
         f.close()
+  except IOError:
+    print "File : ", DICTIONARY_FILE, " not found"
 
 
 
