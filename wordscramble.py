@@ -58,11 +58,14 @@ def PrintLinesInFile():
 
 parser = argparse.ArgumentParser(description='4in1 game parameter parser')
 parser.add_argument('--letters', dest='allowedletters', required=True, help='All possible english alphabets (enter without any space)')
-parser.add_argument('--size', dest='sizeofword', required=True, help='Size of the word')
+parser.add_argument('--size', dest='sizeofword', required=False, help='Size of the word')
 
 args = parser.parse_args()
 print "allowedLetters:", args.allowedletters
+if args.sizeofword is None: 
+   args.sizeofword = len(args.allowedletters)
 print "sizeOfWord:", args.sizeofword
+
 allowedlettersInCAPS = args.allowedletters
 allowedlettersInCAPS = allowedlettersInCAPS.upper()
 print "allowedlettersInCAPS:", allowedlettersInCAPS
